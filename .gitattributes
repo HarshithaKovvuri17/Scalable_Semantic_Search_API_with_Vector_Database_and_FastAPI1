@@ -1,0 +1,13 @@
+# Auto-detect text files and normalize line endings
+* text=auto
+
+# Ensure shell scripts always retain LF line endings
+*.sh text eol=lf
+
+# Python, JSON, YAML, and Markdown configs
+*.py text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.example text eol=lf
