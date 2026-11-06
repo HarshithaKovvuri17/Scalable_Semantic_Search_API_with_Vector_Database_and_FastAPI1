@@ -5,7 +5,6 @@
 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Sentence--Transformers-FFD21E?style=flat&logo=huggingface&logoColor=black)](https://sbert.net)
 [![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Tests](https://img.shields.io/badge/Tests-Pytest%20Passing%20(27%2F27)-brightgreen?style=flat&logo=pytest&logoColor=white)](https://docs.pytest.org)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ## Project Overview
 
