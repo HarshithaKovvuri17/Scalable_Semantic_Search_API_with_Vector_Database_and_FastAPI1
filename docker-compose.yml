@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  semantic-search-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: semantic_search_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - MODEL_NAME=sentence-transformers/all-MiniLM-L6-v2
+      - MODEL_CACHE_DIR=/app/models/sentence_transformer
+      - DATA_PATH=/app/data/documents.json
+      - FAISS_INDEX_PATH=/app/data/faiss_index.bin
+      - EMBEDDINGS_PATH=/app/data/embeddings.npy
+      - TOP_K_RESULTS=5
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
